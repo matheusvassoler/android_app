@@ -24,7 +24,7 @@ pipeline {
     stage('Compile') {
       steps {
         // Compile the app and its dependencies
-        sh './gradlew compile${BUILD_TYPE}Sources'
+        sh './gradlew compile${BUILD_TYPE}Sources --status'
       }
     }
 
