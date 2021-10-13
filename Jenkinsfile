@@ -31,7 +31,7 @@ pipeline {
     stage('Build') {
       steps {
         // Compile the app and its dependencies
-        sh './gradlew assemble${BUILD_TYPE}'
+        sh './gradlew assemble${BUILD_TYPE} --stacktrace'
       }
     }
 
