@@ -24,14 +24,14 @@ pipeline {
     stage('Compile') {
       steps {
         // Compile the app and its dependencies
-        sh './gradlew compile${BUILD_TYPE}Sources --status'
+        sh './gradlew compile${BUILD_TYPE}Sources'
       }
     }
 
     stage('Build') {
       steps {
         // Compile the app and its dependencies
-        sh './gradlew assemble${BUILD_TYPE} --stacktrace'
+        sh './gradlew assemble${BUILD_TYPE}'
       }
     }
 
