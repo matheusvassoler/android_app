@@ -41,6 +41,21 @@ pipeline {
         }
     }
 
+    stage("Tests") {
+        parallel {
+            stage("Unit test") {
+                steps {
+                    sh './gradlew test${BUILD_TYPE}'
+                }
+            }
+            stage("Instrumented test") {
+                steps {
+                    sh './gradlew connectedAndroidTest'
+                }
+            }
+        }
+    }
+
 //     stage('Publish') {
 //       steps {
 //         // Archive the APKs so that they can be downloaded from Jenkins
